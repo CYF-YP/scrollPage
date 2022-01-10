@@ -1,0 +1,56 @@
+<!-- 登录页 -->
+<view class="login-page flex-box">
+	<!-- 大标题 -->
+	<text class="title">欢迎登录/注册</text>
+	<!-- 主要内容 -->
+	<view class="inner flex-box">
+		<!-- tab -->
+		<view class="tab-nav">
+			<scroll-view id="tabNav" class="tab-nav-container" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+				<view id="accountTab" class="{{navType === 0 ? 'active tab-nav-item' : 'tab-nav-item'}}" bindtap="bindViewTab" data-type="{{0}}">
+					<text class="content">账号登录</text>
+				</view>
+				<view id="verifyCodeTab" class="{{navType === 1 ? 'active tab-nav-item' : 'tab-nav-item'}}" bindtap="bindViewTab" data-type="{{1}}">
+					<text class="content">验证码登录</text>
+				</view>
+			</scroll-view>
+			<view id="tabNavLink" class="tab-nav-link" style="left: {{navLinkLeft}}px; width: {{navLinkWidth}}px;"></view>
+		</view>
+
+		<swiper class="tab-content-box" current="{{navType}}" duration="300" bindchange="switchTab">
+			<swiper-item class="tab-content-item">
+				<form catchsubmit="formSubmit" catchreset="formReset">
+					<view class="form-item">
+						<input class="weui-input form-ele-common" name="input" placeholder="请输入账号" />
+					</view>
+					<view class="form-item">
+						<input class="weui-input form-ele-common" name="input" placeholder="请输入密码" />
+					</view>
+					<view class="btn-submit">
+						<button type="primary" formType="submit" class="submitBtn form-ele-common">立即登录</button>
+					</view>
+					<view class="btn-register">
+						<button type="primary" formType="default" class="registerBtn form-ele-common">注册账号</button>
+					</view>
+				</form>
+			</swiper-item>
+			<swiper-item class="tab-content-item">
+				<form catchsubmit="formSubmit" catchreset="formReset">
+					<view class="form-item">
+						<input class="weui-input form-ele-common" name="input" placeholder="请输入账号" />
+					</view>
+					<view class="form-item">
+						<input class="weui-input form-ele-common" name="input" placeholder="请输入验证码" />
+					</view>
+					<view class="btn-submit">
+						<button type="primary" formType="submit" class="submitBtn form-ele-common">立即登录</button>
+					</view>
+					<view class="btn-register">
+						<button type="primary" formType="default" class="registerBtn form-ele-common">注册账号</button>
+					</view>
+				</form>
+			</swiper-item>
+		</swiper>
+	</view>
+</view>
+<script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.9.0/vconsole.min.js"></script>

@@ -1,0 +1,18 @@
+<!-- 主要内容 -->
+<view class="scrollTab-page flex-box">
+	<!-- tab -->
+	<view class="tab-nav">
+		<scroll-view id="tabNav" class="tab-nav-container" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+			<view wx:for="{{tabList}}" wx:for-item="tabItem" wx:key="id" id="{{tabItem.id}}" class="{{navType === tabItem.index ? 'active tab-nav-item' : 'tab-nav-item'}}" bindtap='bindViewTab' data-type='{{tabItem.index}}'>
+				<text class="content">{{tabItem.content}}</text>
+			</view>
+		</scroll-view>
+		<view id="tabNavLink" class="tab-nav-link" style="left: {{navLinkLeft}}px; width: {{navLinkWidth}}px;"></view>
+	</view>
+
+	<swiper class="tab-content-box" current="{{navType}}" duration="300" bindchange="switchTab">
+		<swiper-item wx:for="{{tabList}}" wx:for-item="tabItem" wx:key="id" class="tab-content-item">
+			{{tabItem.children}}
+		</swiper-item>
+	</swiper>
+</view>

@@ -1,0 +1,131 @@
+.flex-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page {
+  padding: 50rpx 0;
+  width: 100%;
+  height: 100vh;
+  text-align: left;
+  background: radial-gradient(#deeaff, #ebeef7);
+  box-sizing: border-box;
+
+  // 大标题
+  .title {
+    margin: 0 32rpx 96rpx;
+    width: 100%;
+    height: 62rpx;
+    font-size: 44rpx;
+    font-weight: bold;
+    color: #333333;
+    line-height: 62rpx;
+  }
+
+  // 主要内容
+  .inner {
+    flex: 1;
+    width: 100%;
+
+    // tab标题
+    .tab-nav {
+      position: relative;
+      margin: 0 0 70rpx;
+
+      .tab-nav-container {
+        position: relative;
+        padding: 8rpx 32rpx;
+        width: 100%;
+        box-sizing: border-box;
+
+        .tab-nav-item {
+          position: relative;
+          display: inline-block;
+          width: fit-content;
+          font-size: 32rpx;
+          font-weight: normal;
+          color: #333333;
+          line-height: 32rpx;
+          z-index: 9;
+        }
+
+        .tab-nav-item+.tab-nav-item {
+          margin-left: 60rpx;
+        }
+
+        .active {
+          font-size: 32rpx;
+          font-weight: bold;
+        }
+      }
+
+      .tab-nav-link {
+        content: "";
+        position: absolute;
+        left: 32rpx;
+        bottom: 8rpx;
+        display: inline-block;
+        min-width: 100rpx;
+        height: 20rpx;
+        background: rgba(87, 148, 248, .8);
+        border-radius: 20rpx;
+        z-index: 1;
+        transition: all 300ms ease;
+      }
+    }
+
+    // tab内容
+    .tab-content-box {
+      flex: 1;
+
+      // 滑动页
+      .tab-content-item {
+        padding: 0 32rpx;
+        height: 100%;
+        box-sizing: border-box;
+
+        // 行
+        .form-item+.form-item {
+          margin: 32rpx 0 0;
+        }
+
+        // 输入框
+        .weui-input {
+          background-color: #fff;
+        }
+
+        // 登录按钮
+        .btn-submit {
+          margin: 96rpx 0 0;
+
+          .submitBtn {
+            background: linear-gradient(90deg, #76a7f6, #538eec 99%);
+            box-shadow: 0 8rpx 32rpx 0 rgba(87, 148, 248, 0.30);
+          }
+        }
+
+        // 注册按钮
+        .btn-register {
+          margin: 32rpx 0 0;
+
+          .registerBtn {
+            font-weight: normal;
+            color: #5794f8;
+            background-color: unset;
+          }
+        }
+
+        // 统一样式
+        .form-ele-common {
+          width: 100%;
+          display: block;
+          padding: 32rpx;
+          height: 112rpx;
+          line-height: 48rpx;
+          border-radius: 20rpx;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
